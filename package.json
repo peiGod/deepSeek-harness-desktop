@@ -1,0 +1,43 @@
+{
+  "name": "deepSeek-harness-desktop",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness Desktop",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development electron .",
+    "build": "cross-env NODE_ENV=production electron-builder"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "build": {
+    "appId": "com.example.deepSeekHarnessDesktop",
+    "productName": "DeepSeek Harness Desktop",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "build/icons/windows_ico_package/icon_256x256.png",
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    },
+    "mac": {
+      "icon": "build/icons/macos_icns_package/AppIcon.icns",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^43.4.0",
+    "electron-builder": "^26.15.3"
+  }
+}
